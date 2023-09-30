@@ -26,6 +26,12 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci ./eAuction.UI
-    - run: npm run build ./eAuction.UI --if-present
-    - run: npm test ./eAuction.UI
+    - name: Install dependencies
+      run: npm ci
+      working-directory: ./eAuction.UI
+    - name: Build
+      run: npm run build --if-present
+      working-directory: ./eAuction.UI
+    - name: Test
+      run: npm test
+      working-directory: ./eAuction.UI
