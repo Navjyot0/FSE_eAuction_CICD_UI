@@ -26,6 +26,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci eAuction.UI
-    - run: npm run build eAuction.UI --if-present
-    - run: npm test eAuction.UI
+    - run: npm ci ./eAuction.UI
+    - run: npm run build ./eAuction.UI --if-present
+    - run: npm test ./eAuction.UI
